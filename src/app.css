@@ -2,8 +2,26 @@
 
 body {
   font-family: "Allerta", sans-serif;
+  font-family: sans-serif;
+  background-color: #181818;
 }
 
 h1{
     font-size: 40px;
+}
+.whatssup{
+  width: 17%;
+  height: 35px;
+  background: rgba(84, 255, 84, 0.6);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-decoration-line: none;
+  justify-items: center;
+  border-radius: 5px;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
 }

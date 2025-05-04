@@ -5,11 +5,11 @@
   width: 60%;
   height: auto;
   margin: 0 auto;
-  background: rgba(23, 31, 46, 1);
+  background: rgba(51, 51, 51, 0.514);
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
-  box-shadow: 0px 0px 30px rgba(62, 171, 222, 0.76);
+  box-shadow: 0px 0px 30px #4e03733b;
   gap: 20px;
 }
 
@@ -24,14 +24,14 @@ h1{
 }
 
 .contact h2 {
-  color: rgba(62, 171, 222, 1);
+  color: #a831e4;
   font-size: 24px;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .infomation p {
-  text-align: left;
+  text-align: center;
   color: aliceblue;
   padding-left: 10px;
   font-size: 18px;
@@ -49,11 +49,22 @@ h1{
   color: aliceblue;
 }
 
+.icons {
+  margin-right: 10px;
+  color: #a831e4; /* Optional: Change icon color */
+}
+
+
 .form {
   width: 55%;
   text-align: left;
   padding: 20px;
   font-size: 20px;
+}
+
+.form h2{
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .form input,
@@ -83,7 +94,7 @@ h1{
   height: 50px;
   padding: 10px;
   justify-content: center;
-  background: rgba(62, 171, 222, 1);
+  background: #4e0373;
   border: none;
   border-radius: 5px;
   color: white;
@@ -94,11 +105,11 @@ h1{
 }
 
 .form button:hover {
-  background: #1c2c3a;
-  color: rgba(62, 171, 222, 1);
+  background: #a831e4;
+  color: white;
   font-size: larger;
-  border: 1px rgba(62, 171, 222, 1) solid;
-  box-shadow: 0px 0px 10px rgba(62, 171, 222, 1);
+  border: 1px white solid;
+  box-shadow: 0px 0px 10px #a831e4;
 }
 
 

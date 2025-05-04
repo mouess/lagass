@@ -11,6 +11,9 @@ import VideosPage from "./videos";
 import MotionGraphic from "./motiongraphic";
 import VideoDetail from "./VideoDetail";
 import "./app.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 
 const App = () => {
   const [data, setData] = useState({ images: [], videos: [] });
@@ -31,16 +34,14 @@ const App = () => {
     <>
       <Nav data={data} /><br/><br/>
       {GlobalComponents && videoSrc ? (
-        <video id="home" src={videoSrc} autoPlay muted loop width="100%">
+        <video id="home" src="/Enregistrement de l'écran 2025-04-25 204522.mp4" autoPlay muted loop width="100%">
           Votre navigateur ne supporte pas la vidéo.
         </video>
       ) : GlobalComponents ? (
         <p>Vidéo indisponible</p>
       ) : null}
       <br />
-    
-      {GlobalComponents && <Services data={data} />}
-      
+          
       <Routes>
         <Route path="/" element={<WORK data={data} />} />
         <Route path="/photo" element={<Photos data={data} />} />
@@ -48,11 +49,19 @@ const App = () => {
         <Route path="/video/:id" element={<VideoDetail data={data} />} />
         <Route path="/motiongraphic" element={<MotionGraphic data={data} />} />
       </Routes>
+
+      {GlobalComponents && <Services data={data} />}
       
       {GlobalComponents && <Partner data={data} />}
       <br />
       {GlobalComponents && <Contact data={data} />}
       <Footer data={data} />
+
+      <div class="whatssup">
+        <FontAwesomeIcon icon={faWhatsapp} />
+        <a href="https://wa.me/+212660079068" target="_blank"><p>contact us via whatssup</p></a>
+      </div>
+
     </>
   );
 };

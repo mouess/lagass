@@ -1,7 +1,7 @@
 footer {
   text-align: center;
   color: aliceblue;
-  background: rgba(23, 31, 46, 1);
+  background: rgb(44, 44, 44);
   margin-bottom: 0px;
   padding: 10px;
   width: 100%;
@@ -23,4 +23,8 @@ footer img {
 
 .socialmedia {
   padding: 10px 10px;
+  width: 100px;
+  margin-right: 10px;
+  color: #a831e4; /* Optional: Change icon color */
+  
 }

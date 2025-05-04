@@ -11,7 +11,7 @@ h1 {
   text-align: center;
   font-size: 28px;
   font-weight: bold;
-  color: rgba(62, 171, 222, 1);
+  color: #4e0373;
   text-transform: uppercase;
   margin-bottom: 10px;
   display: flex;
@@ -25,7 +25,7 @@ h1::after {
   content: "";
   flex-grow: 1;
   height: 5px; 
-  background-color: rgba(62, 171, 222, 1);
+  background-color: #4e0373;
   width: 200px;
 }
 
@@ -48,7 +48,7 @@ h1::after {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px #00000086;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -82,13 +82,25 @@ h1::after {
   opacity: 1;
 }
 
+.circle-background1 {
+  width: 400px; 
+  height: 350px; 
+  background-color: #4e03734c;
+  box-shadow: 0 0 300px #4e0373; 
+  position: absolute;
+  left: 80%;
+  margin-top: 400px;
+  border-radius: 50%; 
+  z-index: -1; 
+}
+
 /* ✅ STATISTICS SECTION */
 .stats {
   display: flex;
   justify-content: center;
   gap: 80px; /* Adjusted for better spacing */
   font-size: 1.2em;
-  color: rgba(23, 31, 46, 1);
+  color: white;
   margin-top: 40px;
   text-align: center;
   width: 100%;

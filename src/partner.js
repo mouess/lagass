@@ -1,51 +1,58 @@
-import React from "react";
-import "./partner.css";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import "./partner.css"; 
 
-const Partner = ({ data }) => {
-  // Filter the images as before.
-  const filteredImages = data?.images?.filter(
-    (img) =>
-      img.category === "partners" &&
-      !["partner9", "partner10", "partner11"].includes(img.name)
-  );
-
-  // Group images into rows of 4.
-  const rows = [];
-  const screenWidth = window.innerWidth; // Get the screen width
-
-  if (filteredImages) {
-    if (screenWidth <= 800) {
-      for (let i = 0; i < filteredImages.length; i += 2) {
-        rows.push(filteredImages.slice(i, i + 2));
+const Explorer = ({ data }) => {
+  const location = useLocation();
+ 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    pauseOnHover: true,
+    slidesToShow: 6,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
+        }
       }
-    } else {
-      for (let i = 0; i < filteredImages.length; i += 4) {
-        rows.push(filteredImages.slice(i, i + 4));
-      }
-    }
-  }
-
+    ]
+  };
 
 
   return (
-    <>
-      <h1>Partners & Clients</h1>      
-      <table className="partner-table">
-        <tbody>
-          {rows.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((img) => (
-                <td key={img.name} className="partner-cell">
-                  <img src={img.src} alt={img.name} className="partner-logo" />
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <br />
-    </>
+    <div className="explorer-container">
+      <h1>Partners</h1>
+
+      <div className="slider-container">
+      <div className="slider-wrapper">
+            <Slider {...settings}>
+              <img src="/279151366_1405286799919906_3087219015423104980_n.jpg" alt="scribe"/>
+              <img src="/294570545_513067640619055_8699447324913488677_n.png" alt="grp secours"/>
+              <img src="/343729657_151229931216331_1685905234358396768_n.jpg" alt="rabat surf"/>
+              <img src="/Artlens-Logo-BluexBlack.png" alt="Artlens"/>
+              <img src="/esfg.jpg" alt="ibrand"/>
+              <img src="/feth.jpg" alt="isaim"/>
+              <img src="/fsdgh.png" alt="nike"/>
+              <img src="/Logo-OFPPT-removebg-preview.png" alt="ofppt"/>
+              <img src="/logo2.png" alt="ministre"/>
+              <img src="/stg.png" alt="hundson"/>
+              <img src="/USYM.png" alt="USYM"/>
+              <img src="/WhatsApp_Image_2025-01-28_at_05.32.55-removebg-preview.png" alt="cinema"/>
+            </Slider>
+        </div>
+      </div>
+
+    </div>
   );
 };
 
-export default Partner;
+export default Explorer;

@@ -60,14 +60,14 @@ const WORK = ({ data }) => {
       <div className="cards">
         <div className="image-container" onClick={() => navigate("/photo")}>
           <img
-            src={data?.images?.find((img) => img.name === "work1")?.src}
+            src="/_CDA8655.jpg"
             alt="PHOTO"
           />
           <div className="image-text">PHOTO</div>
         </div>
         <div className="image-container" onClick={() => navigate("/videos")}>
           <img
-            src={data?.images?.find((img) => img.name === "work2")?.src}
+            src="/_CDA8020.jpg"
             alt="VIDEO"
           />
           <div className="image-text">VIDEO</div>
@@ -77,12 +77,14 @@ const WORK = ({ data }) => {
           onClick={() => navigate("/motiongraphic")}
         >
           <img
-            src={data?.images?.find((img) => img.name === "work3")?.src}
+            src="/1AB1555A-4DFC-4065-A849-162784EEB8FE.jpeg"
             alt="MOTION GRAPHIC"
           />
           <div className="image-text">MOTION GRAPHIC</div>
         </div>
       </div>
+
+      <div class="circle-background1"></div>
 
       <div className="stats" ref={ref}>
         <div className="space">

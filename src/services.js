@@ -7,24 +7,15 @@ const Services = ({ data }) => {
   return (
     <>
       <h1 id="services">OUR SERVICES</h1>
+
+      <div class="circle-background"></div>
+
       <p>
         We are here specifically to enhance your brand and push it towards new
         horizons of excellence and innovation.
       </p>
 
-      <div
-        className="icones"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          width: "100%",
-          boxSizing: "border-box",
-          overflow: "hidden"
-        }}
-      >
+      <div className="icones">
         <div className="ic">
           <img src={data?.images?.find((img) => img.name === "icon1")?.src} alt="icon1" width="250px" />
           <h3>Content Creation</h3>

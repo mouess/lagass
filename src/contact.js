@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./contact.css";
-import { createClient } from "@supabase/supabase-js";
+//import { createClient } from "@supabase/supabase-js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 // Configuration de Supabase
-const supabaseUrl = "https://lvdvmqdtzqzuzppnjhvj.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2ZHZtcWR0enF6dXpwcG5qaHZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAxNjkwMzksImV4cCI6MjA1NTc0NTAzOX0.H0v-0n9lqDRCdxPtWRUcKVsPZTkk36iOOayuFgGAzXA";
-const supabase = createClient(supabaseUrl, supabaseKey);
+//const supabaseUrl = "";
+//const supabaseKey ="";
+//const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Contact = ({ data }) => {
+
   const bgImage = data?.images?.find((img) => img.name === "background2")?.src;
 
   const [formData, setFormData] = useState({
@@ -61,9 +63,9 @@ const Contact = ({ data }) => {
     setSuccess(null);
     setErrorMsg("");
 
-    if (!validateForm()) return;
+    if (!validateForm()) return;}
 
-    const { error } = await supabase.from("contact").insert([
+  /*  const { error } = await supabase.from("contact").insert([
       {
         name: formData.name,
         email: formData.email,
@@ -80,42 +82,27 @@ const Contact = ({ data }) => {
       setSuccess(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
     }
-  };
+  };*/
 
   return (
     <>
       <h1 className="h1">CONTACT</h1>
-      <div
-        id="contact"
-        style={{
-          backgroundImage: isSmallScreen ? "none" : `url(${bgImage})`, // Hide background for small screens
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          width: "100%",
-          filter: "brightness(0.8)",
-          paddingTop: "30px",
-          paddingBottom: "30px",
-          boxSizing: "border-box",
-          overflow: "hidden"
-        }}
-      >
+      <div id="contact">
         <br />
         <br />
         <div className="contact">
           <div className="infomation">
-            <h2>contact</h2>
-            <p>sdfs djk sqlfk l qlkfn</p>
-            <h2>artlens informations</h2>
+            <h2>contact</h2><br/>
+            <p>You can contact us using this information</p>
+            <h2>LAGASS informations</h2><br/>
             <ul>
-              <li>contact@artlens.com</li>
-              <li>+33 1 23 45 67 89</li>
-              <li>sdgdsgfg qs dsqfgdsq</li>
+              <li><FontAwesomeIcon icon={faEnvelope} className="icons"/>lagass.contact@gmail.com</li><br/>
+              <li><FontAwesomeIcon icon={faPhone} className="icons"/>+212 6 60 07 90 68</li><br/>
+              <li><FontAwesomeIcon icon={faMapMarkerAlt} className="icons"/>Rabat CYM amal1 Av. al izdihar</li>
             </ul>
           </div>
           <div className="form">
-            <h2>envoyer nous un message</h2>
+            <h2>send us a message</h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -148,7 +135,7 @@ const Contact = ({ data }) => {
                 onChange={handleChange}
               ></textarea>
               <br />
-              <button type="submit">Envoyer</button>
+              <button type="submit">submit</button>
             </form>
             <br />
             {success === true && (

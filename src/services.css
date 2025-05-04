@@ -2,7 +2,7 @@ h1 {
   text-align: center;
   font-size: 28px;
   font-weight: bold;
-  color: rgba(62, 171, 222, 1);
+  color: #ba31ff;
   text-transform: uppercase;
   margin-bottom: 10px;
   display: flex;
@@ -17,16 +17,26 @@ h1::after {
   content: "";
   flex-grow: 1;
   height: 3px; /* Line thickness */
-  background-color: rgba(62, 171, 222, 1);
+  background-color: #ba31ff;
   max-width: 200px; /* Maximum line length */
 }
 
 p {
   text-align: center;
   font-size: 16px;
-  color: #444;
+  color: white;
   max-width: 700px;
   margin: 0 auto 30px;
+}
+
+.circle-background {
+  width: 300px; 
+  height: 350px; 
+  background-color: #4e03734c;
+  box-shadow: 0 0 300px #4e0373; 
+  position: absolute;
+  border-radius: 50%; 
+  z-index: -1; 
 }
 
 .icones {
@@ -81,7 +91,7 @@ body {
     content: "";
     flex-grow: 1;
     height: 0px; 
-    background-color: rgba(62, 171, 222, 1);
+    background-color: white;
     max-width: 0px; 
   }
 

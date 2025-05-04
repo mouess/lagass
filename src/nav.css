@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px;
-    background-color: white;
+    background-color: #181818;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -22,7 +22,7 @@ nav {
     display: flex;
     gap: 30px;
     list-style: none;
-    padding-right: 20px;
+    padding-right: 40px;
     margin: 0;
 }
 
@@ -30,14 +30,13 @@ nav {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    color: rgba(62, 171, 222, 1);
+    color: white;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .fullscreen-menu ul li:hover {
-    color: #1c2c3a;
-    font-size: larger;
+    color: #ba31ff;
 }
 
 @media (max-width: 800px) {
@@ -46,47 +45,57 @@ nav {
         flex-direction: column;
         cursor: pointer;
         padding: 10px;
+        z-index: 1001; /* Ensure it stays above the menu */
     }
 
     .burger-menu .bar {
         width: 30px;
         height: 4px;
-        background-color: #000000;
+        background-color: white;
         margin: 3px 20px;
-        transition: 3s;
+        transition: 0.3s;
     }
 
     .fullscreen-menu {
-        position: absolute;
-        top: 60px;
-        right: -100%;
-        background: white;
+        position: fixed;
+        top: -100%; /* Start above the viewport */
+        left: 0;
         width: 100%;
-        height: calc(100vh - 60px);
+        height: 230px;
+        background: #181818;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease-in-out;
-        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: top 0.5s ease-in-out; /* Animate the top property */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 1000;
     }
-
+    
     .fullscreen-menu.menu-open {
-        right: 0;
+        top: 80px; /* Slide down to this position */
     }
-
+    
     .fullscreen-menu ul {
         flex-direction: column;
         gap: 20px;
         padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .fullscreen-menu ul li {
+        font-size: 18px;
+        width: 100%;
+        padding: 8px 0;
+        border-bottom: 2px solid white;
+        list-style: none;
     }
 
-    .fullscreen-menu ul li {
-        font-size: 20px;
-    }
 }
 
-/* Cacher le menu burger et rétablir le menu normal sur écran large */
+/* Large screen styles remain the same */
 @media (min-width: 801px) {
     .burger-menu {
         display: none !important;
