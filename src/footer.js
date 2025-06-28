@@ -8,12 +8,18 @@ const Footer = ({ data }) => {
   return (
     <>
       <footer>
-        <h3>Be part of our story on our social platforms</h3>
+        <h3 style={{fontSize:"larger"}}>Discover our social media platforms</h3>
         <div className="socialmedia">
-          <FontAwesomeIcon icon={faInstagram} className="icons" />
-          <FontAwesomeIcon icon={faSquareFacebook} className="icons" />
-          <FontAwesomeIcon icon={faTiktok} className="icons" />
-        </div>
+          <a href="https://www.instagram.com/lagass.ma/#" target="_blank">
+            <FontAwesomeIcon icon={faInstagram} className="icons" />
+          </a>
+          <a href="https://www.facebook.com/people/Lagass-Lagass/pfbid025nyogiyP3h2oWKzhkUW3G3AqmfiwkvnWBvHwt4A4pVH4AQ9gCSXV3eSV3X2psDt7l/" target="_blank">
+            <FontAwesomeIcon icon={faSquareFacebook} className="icons" />
+          </a>
+          <a href="https://www.tiktok.com/@lagass.agency" target="_blank">
+            <FontAwesomeIcon icon={faTiktok} className="icons" />
+          </a>
+        </div><br/>
         <p>&copy; 2025 LAGASS. Tous droits réservés - lagass.ma</p>
       </footer>
     </>

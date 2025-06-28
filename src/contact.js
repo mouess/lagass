@@ -93,7 +93,7 @@ const Contact = ({ data }) => {
         <div className="contact">
           <div className="infomation">
             <h2>contact</h2><br/>
-            <p>You can contact us using this information</p>
+            <p>You can contact us using this informations</p>
             <h2>LAGASS informations</h2><br/>
             <ul>
               <li><FontAwesomeIcon icon={faEnvelope} className="icons"/>lagass.contact@gmail.com</li><br/>

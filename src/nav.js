@@ -7,7 +7,7 @@ const Nav = ({ data }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const logo = data?.images?.find((img) => img.name === "full-logo")?.src;
+  //const logo = data?.images?.find((img) => img.name === "full-logo")?.src;
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -29,11 +29,7 @@ const Nav = ({ data }) => {
   return (
     <nav>
       <div className="nav-logo">
-        {logo ? (
-          <img src="/lagass-black-removebg-preview.png" alt="Logo" onClick={() => window.location.reload()} />
-        ) : (
-          <p></p>
-        )}
+        <img src="/img/logo.png" alt="Logo" onClick={() => window.location.reload()} />
       </div>
 
       <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -45,9 +41,9 @@ const Nav = ({ data }) => {
       <div className={`fullscreen-menu ${menuOpen ? "menu-open" : ""}`}>
         <ul>
           <li onClick={() => handleNavClick("home")}>Home</li>
-          <li onClick={() => handleNavClick("Work")}>Our Work</li>
+          <li onClick={() => handleNavClick("work")}>Our Work</li>
           <li onClick={() => handleNavClick("services")}>Our Services</li>
-          <li onClick={() => handleNavClick("contact")}>Contact</li>
+          <li onClick={() => navigate('/contact')}>Contact</li>
         </ul>
       </div>
     </nav>

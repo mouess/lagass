@@ -35,18 +35,17 @@ const Explorer = ({ data }) => {
       <div className="slider-container">
       <div className="slider-wrapper">
             <Slider {...settings}>
-              <img src="/279151366_1405286799919906_3087219015423104980_n.jpg" alt="scribe"/>
-              <img src="/294570545_513067640619055_8699447324913488677_n.png" alt="grp secours"/>
-              <img src="/343729657_151229931216331_1685905234358396768_n.jpg" alt="rabat surf"/>
-              <img src="/Artlens-Logo-BluexBlack.png" alt="Artlens"/>
-              <img src="/esfg.jpg" alt="ibrand"/>
-              <img src="/feth.jpg" alt="isaim"/>
-              <img src="/fsdgh.png" alt="nike"/>
-              <img src="/Logo-OFPPT-removebg-preview.png" alt="ofppt"/>
-              <img src="/logo2.png" alt="ministre"/>
-              <img src="/stg.png" alt="hundson"/>
-              <img src="/USYM.png" alt="USYM"/>
-              <img src="/WhatsApp_Image_2025-01-28_at_05.32.55-removebg-preview.png" alt="cinema"/>
+              <img src="/partners/scribe.png" alt="scribe"/>
+              <img src="/partners/grpSecours.png" alt="grp secours"/>
+              <img src="/partners/surf.png" alt="rabat surf"/>
+              <img src="/partners/artlens.png" alt="Artlens"/>
+              <img src="/partners/USYM.png" alt="usym"/>
+              <img src="/partners/isaim.png" alt="isaim"/>
+              <img src="/partners/nike.png" alt="nike"/>
+              <img src="/partners/ofppt.png" alt="ofppt"/>
+              <img src="/partners/ministre.png" alt="ministre"/>
+              <img src="/partners/hundson.png" alt="hundson"/>
+              <img src="/partners/cinema.png" alt="cinema"/>
             </Slider>
         </div>
       </div>

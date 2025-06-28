@@ -1,38 +1,60 @@
-import React from "react";
+import React, { useRef , useState } from "react";
 import "./services.css";
+import { motion, useInView } from 'framer-motion';
+import Card from "./Card";
 
 const Services = ({ data }) => {
   const bgImage = data?.images?.find((img) => img.name === "background1")?.src;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const info = {
+    card: [
+      { 
+        title: 'Content Creation', 
+        img: '/img/iconpen.PNG', 
+        text: 'Creative design and oversight of your projects.' ,
+        link: '<a href="https://wa.me/+212660079068" target="_blank">more informations...</a></p>'
+      },
+      { 
+        title: 'Media Promotion', 
+        img: '/img/iconcamera.PNG', 
+        text: 'Planning, strategies to promote your brand online.',
+        link: ''
+      },
+      { 
+        title: 'Website Creation', 
+        img: '/img/iconvid.PNG', 
+        text: 'Designing and building your online presence.',
+        link: '</p>'
+      }
+    ]
+  };
+
+  const [infoServices, setInfoServices] = useState(info);
 
   return (
     <>
-      <h1 id="services">OUR SERVICES</h1>
+      <motion.h1 id="services"
+        initial={{ opacity: 1, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
+        OUR SERVICES
+      </motion.h1>
 
       <div class="circle-background"></div>
 
       <p>
-        We are here specifically to enhance your brand and push it towards new
-        horizons of excellence and innovation.
+        Our goal is to strengthen your brand and help it reach new levels of success and creativity.
+        Boost your brand and take it to exciting new heights of success.
       </p>
 
       <div className="icones">
-        <div className="ic">
-          <img src={data?.images?.find((img) => img.name === "icon1")?.src} alt="icon1" width="250px" />
-          <h3>Content Creation</h3>
-          <p>Conception et supervision créative de vos projets</p>
-        </div>
-
-        <div className="ic">
-          <img src={data?.images?.find((img) => img.name === "icon2")?.src} alt="icon2" width="100px" />
-          <h3>Media Promotion</h3>
-          <p>Planification et stratégies pour promouvoir vos productions sur le web. </p>
-        </div>
-
-        <div className="ic">
-          <img src={data?.images?.find((img) => img.name === "icon3")?.src} alt="icon3" width="100px" />
-          <h3>Multimedia Production</h3>
-          <p>Création de contenu professionnel de haute qualité pour vos besoins.</p>
-        </div>
+        {infoServices.card.map((service, index) => (
+          <Card 
+            key={index}
+            title={service.title}
+            img={service.img}
+            text={service.text}
+          />
+        ))}
       </div>
     </>
   );

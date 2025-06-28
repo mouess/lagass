@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import React from "react";
 import "./work.css";
 import { useNavigate } from "react-router-dom";
+import Explorer from "./explorer";
 
 const WORK = ({ data }) => {
   const navigate = useNavigate();
@@ -54,30 +55,30 @@ const WORK = ({ data }) => {
     <div className="container" id="work">
       <h1>OUR WORK</h1>
       <p>
-        With our deep expertise and modern equipment, we create advertisements
-        that inspire and achieve the desired impact.
+        <strong style={{ fontSize: "24px", fontStyle:"italic" }} >Discover our portfolio to see the impact for yourself.</strong><br/>
+        We use our skills and modern tools to create ART that inspire people and get real results.
       </p>
       <div className="cards">
-        <div className="image-container" onClick={() => navigate("/photo")}>
+        <div className="image-container" onClick={() => navigate("/photos")}>
           <img
-            src="/_CDA8655.jpg"
+            src="/img/work-photo.png"
             alt="PHOTO"
           />
           <div className="image-text">PHOTO</div>
         </div>
         <div className="image-container" onClick={() => navigate("/videos")}>
           <img
-            src="/_CDA8020.jpg"
+            src="/img/work-video.png"
             alt="VIDEO"
           />
           <div className="image-text">VIDEO</div>
         </div>
         <div
           className="image-container"
-          onClick={() => navigate("/motiongraphic")}
+          onClick={() => navigate("/graphic")}
         >
           <img
-            src="/1AB1555A-4DFC-4065-A849-162784EEB8FE.jpeg"
+            src="/img/work-graphic.png"
             alt="MOTION GRAPHIC"
           />
           <div className="image-text">MOTION GRAPHIC</div>

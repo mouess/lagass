@@ -22,9 +22,19 @@ footer img {
 }
 
 .socialmedia {
-  padding: 10px 10px;
-  width: 100px;
-  margin-right: 10px;
-  color: #a831e4; /* Optional: Change icon color */
-  
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.icons {
+  color: #a831e4;
+  font-size: 30px; /* ajuste la taille des icônes */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icons:hover {
+  color: #6f1ab4; /* effet au survol */
 }

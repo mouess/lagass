@@ -1,0 +1,190 @@
+.explorer-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .media-section {
+    margin-top: 30px;
+  }
+  
+  select {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #818181;
+    width: 30%;
+  }
+  h2{
+    text-align: left;
+    color: #ba31ff;
+    padding-left: 40px;
+  }
+
+  .dual-sliders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+    width: 90%;
+    text-align: center;
+    margin: 30px auto 0; /* centre avec un peu de marge en haut */
+  }
+  
+  .slide {
+    height: 300px;
+    width: 100%; /* s'assurer qu'il prend la pleine largeur */
+    overflow: hidden; /* empêche le débordement lors du zoom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* optionnel, mais utile pour d'autres effets */
+    gap: 10px; /* 👉 petit espace entre les images */
+    margin: 10px; /* 👉 un peu d’espace entre les bords du slider */
+  }
+  
+  .slider-image {
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    gap: 10px; 
+    padding: 0 5px; 
+  }
+  
+  .slider-image:hover {
+    transform: scale(1.5);
+  }
+  
+  
+  
+  .custom-video {
+    max-width: 60%;
+    max-height: 500px;
+    display: flex;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 4px 20px rgb(0, 0, 0, 0.9);
+    align-items: center;
+    margin: 30px auto 0;
+    justify-content: center;
+  }
+  
+  
+  /* Lightbox overlay style */
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Lightbox content */
+  .lightbox-content {
+    position: relative;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Lightbox image */
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  /* Navigation buttons inside the lightbox */
+  .lightbox-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .lightbox-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .lightbox-buttons button:hover {
+    background-color: #444;
+  }
+  
+  /* Close button */
+  .lightbox-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    color: black;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 800px) {
+    .dual-sliders {
+      gap: 15px;
+      width: 100%;
+    }
+  
+    .slide {
+      max-height: 300px;
+    }
+
+    select {
+      margin-top: 30px;
+      width: 45%;
+    }
+
+    .custom-video {
+      max-width: 85%;
+      max-height: 600px;
+      border-radius: 20px;
+      }
+  }
+  
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajuste la hauteur pour s'adapter à l'image */
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #333;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

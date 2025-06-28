@@ -63,9 +63,13 @@ p {
 }
 
 .ic h3 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: "Bookman Old Style";
+  font-weight: bold;
+  font-style: italic;
+  color: #ba31ff;
 }
 
 .ic p {
@@ -73,6 +77,41 @@ p {
   color: #ddd;
   width: 250px;
   margin: 0 auto;
+  font-family: "Bookman Old Style";
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ic a{
+  color: #ba31ff;
+  text-align: left;
+  font-size: 14px;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+.ic a:hover{
+  color: #fff;
+  text-align: left;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.ic1 , .ic2 , .ic3{
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.055) 0 0 20px;
+}
+
+.ic1{
+  background-color: #4e037328;
+}
+
+.ic2{
+  background-color: rgba(32, 166, 255, 0.048);
+}
+
+.ic3{
+  background-color: #ba31ff10;
 }
 
 body {

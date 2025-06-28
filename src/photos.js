@@ -1,79 +1,136 @@
-import React, { useState } from "react";
-import "./photos.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import "./explorer.css";
 
-const Photos = ({ data }) => {
-  const [category, setCategory] = useState("Toutes les categories");
+const Spinner = () => (
+  <div className="spinner-container">
+    <div className="spinner"></div>
+  </div>
+);
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+const Photo = ({ data }) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const defaultCategory = searchParams.get("category") || "produit";
+
+  const [category, setCategory] = useState(defaultCategory);
+  const [images, setImages] = useState([]);
+  const [isLoadingFirstSlider, setIsLoadingFirstSlider] = useState(true);
+  const [isLoadingSecondSlider, setIsLoadingSecondSlider] = useState(true);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  useEffect(() => {
+    if (data) {
+      const categoryImages = data.images.filter((img) => img.category === category);
+      setImages(categoryImages);
+
+      let loadedFirst = 0;
+      let loadedSecond = 0;
+      const mid = Math.ceil(categoryImages.length / 2);
+
+      categoryImages.slice(0, mid).forEach((img) => {
+        const image = new Image();
+        image.src = img.src;
+        image.onload = () => {
+          loadedFirst++;
+          if (loadedFirst === mid) setIsLoadingFirstSlider(false);
+        };
+      });
+
+      categoryImages.slice(mid).forEach((img) => {
+        const image = new Image();
+        image.src = img.src;
+        image.onload = () => {
+          loadedSecond++;
+          if (loadedSecond === categoryImages.length - mid) setIsLoadingSecondSlider(false);
+        };
+      });
+    }
+  }, [category, data]);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    pauseOnHover: true,
+    slidesToShow: category === "produit" ? 5 : 3,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: category === "produit" ? 2 : 1,
+        }
+      }
+    ]
   };
 
-  // Filtrer uniquement les images ayant une catégorie définie
-  const validImages = data.images.filter(image => image.category);
-
-  // Regrouper les images par catégorie
-  const groupedImages = validImages.reduce((acc, image) => {
-    if (!acc[image.category]) {
-      acc[image.category] = [];
-    }
-    acc[image.category].push(image);
-    return acc;
-  }, {});
+  const handleImageClick = (index) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const nextImage = () => setLightboxIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setLightboxIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="photos-container">
-      <h1>Photos</h1>
-      <h2>Choose one of the categories</h2>
-
-      <select className="category-select" onChange={handleCategoryChange}>
-        <option value="Toutes les categories">Toutes les catégories</option>
-        {Object.keys(groupedImages).map((cat, index) => (
-          <option key={index} value={cat}>{cat}</option>
-        ))}
+    <div className="explorer-container">
+      <h1>Photos - {category}</h1>
+      <select onChange={(e) => setCategory(e.target.value)} value={category}>
+        <option value="produit">Product</option>
+        <option value="event">Event</option>
+        <option value="festival">Festival</option>
+        <option value="immobilier">Real estate</option>
+        <option value="sport">Sport</option>
+        <option value="societe">Company</option>
       </select>
 
-      <h2>Gallery</h2>
-
-      {category === "Toutes les categories" ? (
-        // Afficher toutes les catégories avec un Swiper pour chaque
-        Object.keys(groupedImages).map((cat) => (
-          <div key={cat} className="category-section">
-            <h3 className="category-title">{cat}</h3>
-            <Swiper
-              spaceBetween={5} slidesPerView={5} navigation
-              autoplay={{ delay: 500, disableOnInteraction: false }} loop={true}
-              modules={[Navigation, Autoplay]}
-            >
-              {groupedImages[cat].map((image, index) => (
-                <SwiperSlide key={index} className="image-item">
-                  <img src={image.src} alt={image.name} height="200px" />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        ))
-      ) : (
-        // Afficher uniquement la catégorie sélectionnée
-        <div className="category-section">
-          <h3 className="category-title">{category}</h3>
-          <Swiper spaceBetween={5} slidesPerView={5} navigation
-            autoplay={{ delay: 500, disableOnInteraction: false }} loop={true}
-            modules={[Navigation, Autoplay]}
-          >
-            {groupedImages[category]?.map((image, index) => (
-              <SwiperSlide key={index} className="image-item">
-                <img src={image.src} alt={image.name} height="200px" />
-              </SwiperSlide>
+      <div className="dual-sliders">
+        {isLoadingFirstSlider ? (
+          <Spinner />
+        ) : (
+          <Slider {...settings}>
+            {images.slice(0, Math.ceil(images.length / 2)).map((item, index) => (
+              <div className="slide" key={index} onClick={() => handleImageClick(index)}>
+                <img src={item.src} alt={item.name} className="slider-image" />
+              </div>
             ))}
-          </Swiper>
+          </Slider>
+        )}
+
+        {isLoadingSecondSlider ? (
+          <Spinner />
+        ) : (
+          <Slider {...{ ...settings, rtl: true }}>
+            {images.slice(Math.ceil(images.length / 2)).map((item, index) => (
+              <div
+                className="slide"
+                key={index + Math.ceil(images.length / 2)}
+                onClick={() => handleImageClick(index + Math.ceil(images.length / 2))}
+              >
+                <img src={item.src} alt={item.name} className="slider-image" />
+              </div>
+            ))}
+          </Slider>
+        )}
+      </div>
+
+      {lightboxIndex !== null && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img src={images[lightboxIndex].src} alt={images[lightboxIndex].name} className="lightbox-image" />
+            <div className="lightbox-buttons">
+              <button onClick={prevImage}>←</button>
+              <button onClick={nextImage}>→</button>
+            </div>
+            <button className="lightbox-close" onClick={closeLightbox}>✖</button>
+          </div>
         </div>
       )}
     </div>
   );
 };
 
-export default Photos;
+export default Photo;
