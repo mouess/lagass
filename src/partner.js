@@ -35,17 +35,17 @@ const Explorer = ({ data }) => {
       <div className="slider-container">
       <div className="slider-wrapper">
             <Slider {...settings}>
-              <img src="/partners/scribe.png" alt="scribe"/>
-              <img src="/partners/grpSecours.png" alt="grp secours"/>
-              <img src="/partners/surf.png" alt="rabat surf"/>
-              <img src="/partners/artlens.png" alt="Artlens"/>
-              <img src="/partners/USYM.png" alt="usym"/>
-              <img src="/partners/isaim.png" alt="isaim"/>
-              <img src="/partners/nike.png" alt="nike"/>
-              <img src="/partners/ofppt.png" alt="ofppt"/>
-              <img src="/partners/ministre.png" alt="ministre"/>
-              <img src="/partners/hundson.png" alt="hundson"/>
-              <img src="/partners/cinema.png" alt="cinema"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/scribe.png" alt="scribe"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/grpSecours.png" alt="grp secours"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/surf.png" alt="rabat surf"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/artlens.png" alt="Artlens"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/USYM.png" alt="usym"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/isaim.png" alt="isaim"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/nike.png" alt="nike"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/ofppt.png" alt="ofppt"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/ministre.png" alt="ministre"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/hundson.png" alt="hundson"/>
+              <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/partners/cinema.png" alt="cinema"/>
             </Slider>
         </div>
       </div>

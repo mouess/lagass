@@ -61,14 +61,14 @@ const WORK = ({ data }) => {
       <div className="cards">
         <div className="image-container" onClick={() => navigate("/photos")}>
           <img
-            src="/img/work-photo.png"
+            src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/work-photo.png"
             alt="PHOTO"
           />
           <div className="image-text">PHOTO</div>
         </div>
         <div className="image-container" onClick={() => navigate("/videos")}>
           <img
-            src="/img/work-video.png"
+            src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/work-video.png"
             alt="VIDEO"
           />
           <div className="image-text">VIDEO</div>
@@ -78,7 +78,7 @@ const WORK = ({ data }) => {
           onClick={() => navigate("/graphic")}
         >
           <img
-            src="/img/work-graphic.png"
+            src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/work-graphic.png"
             alt="MOTION GRAPHIC"
           />
           <div className="image-text">MOTION GRAPHIC</div>

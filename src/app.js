@@ -39,7 +39,7 @@ const App = () => {
 
       <Nav data={data} /><br/><br/>
       {GlobalComponents ? (
-        <img id="home" src="/img/vid.JPEG"  width="100%"/>
+        <img id="home" src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/vid.JPEG"  width="100%"/>
       ) : GlobalComponents ? (
         <p>Vidéo indisponible</p>
       ) : null}
