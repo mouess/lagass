@@ -37,9 +37,9 @@ const App = () => {
       <motion.div style={{ position: "fixed", top: 0, left: 0, right: 0, height: "8px",
         background: "#a831e4", transformOrigin: "left", scaleX: scrollYProgress, zIndex: 9999, }} />
 
-      <Nav data={data} /><br/><br/>
+      <Nav data={data} /><br/><br/><br/>
       {GlobalComponents ? (
-        <img id="home" src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/vid.JPEG"  width="100%"/>
+        <video id="home" src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/video%20-%20home.mp4"  width="100%" autoPlay muted controls/>
       ) : GlobalComponents ? (
         <p>Vidéo indisponible</p>
       ) : null}

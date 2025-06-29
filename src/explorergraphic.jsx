@@ -83,15 +83,13 @@ const Explorergraphic = () => {
 
   return (
     <>
-      <h1
-        style={{
+      <h1 style={{
           textAlign: "center",
           color: "magenta",
           textTransform: "uppercase",
           fontSize: "2rem",
           marginTop: "40px",
-        }}
-      >Explorer Graphics</h1>
+        }}>Explorer Graphics</h1>
       <br />
       <div
         style={{
