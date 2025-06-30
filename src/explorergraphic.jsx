@@ -69,7 +69,7 @@ const Explorergraphic = () => {
 
   function getColumnCount() {
     const width = window.innerWidth;
-    return width <= 768 ? 2 : 3; // ≤768px → 2 columns, otherwise 3
+    return width <= 768 ? 1 : 3; // ≤768px → 2 columns, otherwise 3
   }
 
   useEffect(() => {
