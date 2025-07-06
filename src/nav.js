@@ -29,7 +29,7 @@ const Nav = ({ data }) => {
   return (
     <nav>
       <div className="nav-logo">
-        <img src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/logo.png" alt="Logo" onClick={() => window.location.reload()} />
+        <img src="https://res.cloudinary.com/dyfqal83h/image/upload/v1751773142/logo_n5qcyp.png" alt="Logo" onClick={() => window.location.reload()} />
       </div>
 
       <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>

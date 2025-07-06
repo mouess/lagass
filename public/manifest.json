@@ -94,13 +94,13 @@
   ],
 
   "videos": [
-    { "name": "sport - vid 1", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20sport%201.mp4", "category": "sport" },
-    { "name": "sport - vid 2", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20sport%202%20-.mp4", "category": "sport" },
-    { "name": "event - vid 1", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20event%201.mp4", "category": "event" },
-    { "name": "event - vid 2", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20event%202%20-.mp4", "category": "event" },
-    { "name": "company - vid 1", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20company%201.mp4", "category": "company" },
-    { "name": "company - vid 2", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20company%202.mp4", "category": "company" },
-    { "name": "ugc - vid 2", "src": "https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/vid%20-%20ugc.mp4", "category": "ugc" }
+    { "name": "sport - vid 1", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776710/vid_-_sport_1_c3nikz.mp4", "category": "sport" },
+    { "name": "sport - vid 2", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776727/vid_-_sport_2_uaxdpn.mp4", "category": "sport" },
+    { "name": "event - vid 1", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776735/vid_-_event_1_bqskjl.mp4", "category": "event" },
+    { "name": "event - vid 2", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776724/vid_-_event_2_ftt3vi.mp4", "category": "event" },
+    { "name": "company - vid 1", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776724/vid_-_company_1_qtl9f1.mp4", "category": "company" },
+    { "name": "company - vid 2", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776719/vid_-_company_2_vn7nfk.mp4", "category": "company" },
+    { "name": "ugc - vid 2", "src": "https://res.cloudinary.com/dyfqal83h/video/upload/v1751776720/vid_-_ugc_upffmm.mp4", "category": "ugc" }
   ],
 
   "graphic": [

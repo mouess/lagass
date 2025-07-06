@@ -39,7 +39,7 @@ const App = () => {
 
       <Nav data={data} /><br/><br/><br/>
       {GlobalComponents ? (
-        <video id="home" src="https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/data/vids/video%20-%20home.mp4"  width="100%" autoPlay muted controls/>
+        <video id="home" src="https://res.cloudinary.com/dyfqal83h/video/upload/v1751776388/z_nugb6d.mp4"  width="100%" autoPlay muted controls/>
       ) : GlobalComponents ? (
         <p>Vidéo indisponible</p>
       ) : null}

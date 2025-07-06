@@ -11,13 +11,13 @@ const Services = ({ data }) => {
     card: [
       { 
         title: 'Content Creation', 
-        img: 'https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/iconpen.PNG', 
+        img: 'https://res.cloudinary.com/dyfqal83h/image/upload/v1751773141/iconpen_guvv9h.png', 
         text: 'Creative design and oversight of your projects.' ,
         link: '<a href="https://wa.me/+212660079068" target="_blank">more informations...</a></p>'
       },
       { 
         title: 'Media Promotion', 
-        img: 'https://rgsvnzujfenavgjorwdi.supabase.co/storage/v1/object/public/lagass/img/iconcamera.PNG', 
+        img: 'https://res.cloudinary.com/dyfqal83h/image/upload/v1751773141/iconcamera_w2tye1.png', 
         text: 'Planning, strategies to promote your brand online.',
         link: ''
       },
